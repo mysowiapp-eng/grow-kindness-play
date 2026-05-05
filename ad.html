@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Sowi — Help Your Child Stress Less & Grow Stronger 🌱</title>
+
+    <!-- ── Open Graph / Instagram link preview ── -->
+    <meta property="og:title" content="Stressed, distracted, or glued to screens? Sowi can help 🌱">
+    <meta property="og:description" content="Sowi helps kids build real calm, confidence & healthy habits through yoga, meditation & journaling. For parents & kids. Join the waitlist free.">
+    <meta property="og:image" content="https://mysowi.app/og-image.png">
+    <meta property="og:url" content="https://mysowi.app/ad">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stressed, distracted, or glued to screens? Sowi can help 🌱">
+    <meta name="twitter:description" content="Sowi helps kids build real calm, confidence & healthy habits. For parents & kids. Join the waitlist free.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #3dd68c;
+            --green-dark: #22a066;
+            --purple: #7c5cfc;
+            --pink: #ff6eb4;
+            --yellow: #ffd166;
+            --bg: #f0faf5;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --muted: #6b7280;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Animated background blobs ── */
+        .blob-wrap {
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0;
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.35;
+            animation: drift 12s ease-in-out infinite alternate;
+        }
+        .blob-1 { width: 340px; height: 340px; background: #c8f7e0; top: -80px; left: -80px; animation-delay: 0s; }
+        .blob-2 { width: 260px; height: 260px; background: #e0d4ff; top: 30%; right: -60px; animation-delay: 3s; }
+        .blob-3 { width: 200px; height: 200px; background: #ffd6ee; bottom: 10%; left: 10%; animation-delay: 6s; }
+        @keyframes drift {
+            from { transform: translate(0, 0) scale(1); }
+            to   { transform: translate(20px, 30px) scale(1.08); }
+        }
+
+        /* ── Layout ── */
+        .page {
+            position: relative; z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 24px 20px 48px;
+        }
+
+        /* ── Logo bar ── */
+        .logo-bar {
+            display: flex; align-items: center; gap: 8px;
+            margin-bottom: 28px;
+        }
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--green), var(--purple));
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(124,92,252,0.25);
+        }
+        .logo-text {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 26px;
+            background: linear-gradient(135deg, var(--green-dark), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ── Badge ── */
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: linear-gradient(135deg, #fff8dc, #ffe4f0);
+            border: 2px solid #ffd166;
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(255,209,102,0.3);
+        }
+
+        /* ── Headline ── */
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: clamp(28px, 8vw, 38px);
+            line-height: 1.15;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--green-dark), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subhead {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        /* ── Social proof strip ── */
+        .social-proof {
+            display: flex; align-items: center; gap: 10px;
+            background: white;
+            border-radius: 16px;
+            padding: 10px 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 2px solid #e8f5ee;
+        }
+        .avatars { display: flex; }
+        .avatar {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -8px;
+            font-size: 16px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #c8f7e0, #e0d4ff);
+        }
+        .avatar:first-child { margin-left: 0; }
+        .proof-text { font-size: 13px; font-weight: 700; color: var(--text); }
+        .proof-text span { color: var(--green-dark); }
+
+        /* ── Survey card ── */
+        .survey-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            border: 3px solid #e8f5ee;
+        }
+
+        .step { display: none; }
+        .step.active { display: block; }
+
+        .step-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--green-dark);
+            margin-bottom: 8px;
+        }
+
+        .step-q {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 19px;
+            line-height: 1.3;
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        /* ── Option buttons ── */
+        .opt-grid { display: flex; flex-direction: column; gap: 10px; }
+
+        .opt-btn {
+            display: flex; align-items: center; gap: 12px;
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 16px;
+            border: 2.5px solid #e5e7eb;
+            background: #fafafa;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.18s ease;
+        }
+        .opt-btn:hover, .opt-btn:active {
+            border-color: var(--green);
+            background: #f0faf5;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(61,214,140,0.2);
+        }
+        .opt-btn.selected {
+            border-color: var(--purple);
+            background: #f5f0ff;
+        }
+        .opt-icon { font-size: 22px; flex-shrink: 0; }
+
+        /* ── Email step ── */
+        .email-input {
+            width: 100%;
+            padding: 16px 18px;
+            border-radius: 16px;
+            border: 2.5px solid #e5e7eb;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            background: #fafafa;
+        }
+        .email-input:focus { border-color: var(--green); background: white; }
+        .email-input.error { border-color: var(--pink); }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            border-radius: 100px;
+            border: none;
+            background: linear-gradient(135deg, var(--green), var(--purple));
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(124,92,252,0.35);
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124,92,252,0.45); }
+        .submit-btn:active { transform: translateY(0); }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* ── Progress dots ── */
+        .dots {
+            display: flex; justify-content: center; gap: 6px;
+            margin-top: 22px;
+        }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .dot.active { background: var(--green); width: 24px; border-radius: 4px; }
+        .dot.done { background: var(--green-dark); }
+
+        /* ── Success ── */
+        .success-card {
+            display: none;
+            background: white;
+            border-radius: 28px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            border: 3px solid #c8f7e0;
+        }
+        .success-card.show { display: block; }
+        .success-emoji { font-size: 64px; margin-bottom: 12px; }
+        .success-title {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 26px;
+            color: var(--green-dark);
+            margin-bottom: 8px;
+        }
+        .success-sub { font-size: 15px; color: var(--muted); font-weight: 600; line-height: 1.6; }
+
+        /* ── Trust strip ── */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 12px; font-weight: 700; color: var(--muted);
+        }
+
+        /* ── Pulse animation on CTA ── */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 6px 24px rgba(124,92,252,0.35); }
+            50% { box-shadow: 0 6px 36px rgba(124,92,252,0.6); }
+        }
+        .submit-btn { animation: pulse-glow 2.5s ease-in-out infinite; }
+        .submit-btn:hover { animation: none; }
+    </style>
+</head>
+<body>
+
+<div class="blob-wrap">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
+
+<div class="page">
+
+    <!-- Logo -->
+    <div class="logo-bar">
+        <div class="logo-icon">🌱</div>
+        <div class="logo-text">sowi</div>
+    </div>
+
+    <!-- Badge -->
+    <div class="badge">✨ Now accepting early families</div>
+
+    <!-- Headline -->
+    <h1>Feeling <em>stressed, distracted,</em> or just need a better day? 🌱</h1>
+    <p class="subhead">Sowi helps kids ages 6–12 build real calm, confidence & healthy habits — through yoga, meditation & journaling. For parents & kids. Takes 5 minutes a day.</p>
+
+    <!-- Social proof -->
+    <div class="social-proof">
+        <div class="avatars">
+            <div class="avatar">👩</div>
+            <div class="avatar">👨</div>
+            <div class="avatar">👩</div>
+            <div class="avatar">🧒</div>
+        </div>
+        <div class="proof-text"><span>247 families</span> already on the waitlist</div>
+    </div>
+
+    <!-- Survey card -->
+    <div class="survey-card" id="survey-card">
+
+        <!-- Step 1: Role -->
+        <div class="step active" id="step-1">
+            <div class="step-label">Step 1 of 3</div>
+            <div class="step-q">First, who are you? 👋</div>
+            <div class="opt-grid">
+                <button class="opt-btn" onclick="selectRole('parent')">
+                    <span class="opt-icon">👨‍👩‍👧</span> I'm a Parent
+                </button>
+                <button class="opt-btn" onclick="selectRole('kid')">
+                    <span class="opt-icon">🧒</span> I'm a Kid (6–12)
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Pain (parent) -->
+        <div class="step" id="step-2-parent">
+            <div class="step-label">Step 2 of 3</div>
+            <div class="step-q">My biggest worry for my child right now... 💭</div>
+            <div class="opt-grid">
+                <button class="opt-btn" onclick="selectPain(this)" data-val="screen-time">
+                    <span class="opt-icon">📱</span> Too much screen time & poor focus
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="stress-anxiety">
+                    <span class="opt-icon">😟</span> Stress, worry & anxiety
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="confidence">
+                    <span class="opt-icon">💪</span> Low confidence & self-esteem
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="no-routine">
+                    <span class="opt-icon">🌀</span> No healthy daily routine
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Pain (kid) -->
+        <div class="step" id="step-2-kid">
+            <div class="step-label">Step 2 of 3</div>
+            <div class="step-q">I wish I had a fun way to... 🌟</div>
+            <div class="opt-grid">
+                <button class="opt-btn" onclick="selectPain(this)" data-val="calm-down">
+                    <span class="opt-icon">😤</span> Calm down when I'm stressed
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="confidence-kid">
+                    <span class="opt-icon">⭐</span> Feel more confident
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="no-screens">
+                    <span class="opt-icon">🎮</span> Have fun without screens
+                </button>
+                <button class="opt-btn" onclick="selectPain(this)" data-val="sleep">
+                    <span class="opt-icon">😴</span> Sleep better at night
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Email -->
+        <div class="step" id="step-3">
+            <div class="step-label">Step 3 of 3 — Almost there!</div>
+            <div class="step-q">Where should we send your early access? 🎉</div>
+            <input type="email" id="survey-email" class="email-input" placeholder="your@email.com">
+            <button class="submit-btn" onclick="submitSurvey()">
+                Join the Waitlist — It's Free 🌱
+            </button>
+            <p class="privacy-note">🔒 No spam, ever. Unsubscribe anytime.</p>
+        </div>
+
+        <!-- Progress dots -->
+        <div class="dots">
+            <div class="dot active" id="dot-1"></div>
+            <div class="dot" id="dot-2"></div>
+            <div class="dot" id="dot-3"></div>
+        </div>
+    </div>
+
+    <!-- Success -->
+    <div class="success-card" id="success-card">
+        <div class="success-emoji">🌱</div>
+        <div class="success-title">You're on the list!</div>
+        <p class="success-sub">We'll reach out the moment Sowi launches. Thank you for helping us grow — together we're building something special for your family. 💚</p>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="trust-item">🔒 Private & secure</div>
+        <div class="trust-item">✅ Free to join</div>
+        <div class="trust-item">👶 Built for ages 6–12</div>
+    </div>
+
+</div>
+
+<script>
+    let surveyData = { role: null, pain: null, email: null };
+
+    function setDots(active) {
+        for (let i = 1; i <= 3; i++) {
+            const d = document.getElementById('dot-' + i);
+            if (i < active) { d.className = 'dot done'; }
+            else if (i === active) { d.className = 'dot active'; }
+            else { d.className = 'dot'; }
+        }
+    }
+
+    function showStep(id) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        const el = document.getElementById(id);
+        if (el) el.classList.add('active');
+    }
+
+    function selectRole(role) {
+        surveyData.role = role;
+        showStep('step-2-' + role);
+        setDots(2);
+    }
+
+    function selectPain(btn) {
+        surveyData.pain = btn.getAttribute('data-val');
+        btn.classList.add('selected');
+        setTimeout(() => {
+            showStep('step-3');
+            setDots(3);
+        }, 300);
+    }
+
+    async function submitSurvey() {
+        const email = document.getElementById('survey-email').value.trim();
+        const input = document.getElementById('survey-email');
+        if (!email || !email.includes('@')) {
+            input.classList.add('error');
+            input.placeholder = 'Please enter a valid email ⚠️';
+            return;
+        }
+        surveyData.email = email;
+
+        // ── Web3Forms ──────────────────────────────────────────
+        try {
+            await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: 'd6282520-6b0c-4703-b688-5d42808cfc13',
+                    subject: `Sowi Ad Waitlist — ${surveyData.role} / ${surveyData.pain}`,
+                    email: surveyData.email,
+                    role: surveyData.role,
+                    pain_point: surveyData.pain,
+                    source: 'ig-ad-landing',
+                }),
+            });
+        } catch (e) { console.warn('Web3Forms:', e); }
+
+        // ── Mailchimp ──────────────────────────────────────────
+        try {
+            const mcData = new FormData();
+            mcData.append('EMAIL', email);
+            await fetch('https://app.us18.list-manage.com/subscribe/post?u=558e38def2877dd3b60f2b003&amp;id=dc8910a69c&amp;f_id=005cb1e6f0', {
+                method: 'POST', mode: 'no-cors', body: mcData,
+            });
+        } catch (e) { console.warn('Mailchimp:', e); }
+
+        // ── Success ────────────────────────────────────────────
+        document.getElementById('survey-card').style.display = 'none';
+        document.getElementById('success-card').classList.add('show');
+    }
+</script>
+</body>
+</html>
