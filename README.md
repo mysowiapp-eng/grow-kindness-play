@@ -1,3 +1,5 @@
-# Welcome to your Lovable project
+# Welcome to my mini project
 
-TODO: Document your project here
+Leads: https://mysowi.app/ad.html
+Main:  https://mysowi.app
+
