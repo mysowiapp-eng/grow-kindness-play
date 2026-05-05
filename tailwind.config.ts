@@ -19,6 +19,8 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        sun: "hsl(var(--sun))",
+        earth: "hsl(var(--earth))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -63,6 +65,17 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        display: ["Fredoka", "system-ui", "sans-serif"],
+        sans: ["Quicksand", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        leaf: "var(--shadow-leaf)",
+      },
+      backgroundImage: {
+        "gradient-sun": "var(--gradient-sun)",
+      },
       keyframes: {
         "accordion-down": {
           from: {
@@ -80,10 +93,25 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "bloom": {
+          "0%": { opacity: "0", transform: "translateY(20px) scale(0.96)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "sway": {
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "bloom": "bloom 0.8s cubic-bezier(0.16,1,0.3,1) both",
+        "sway": "sway 8s ease-in-out infinite",
       },
     },
   },
